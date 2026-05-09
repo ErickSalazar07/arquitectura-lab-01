@@ -76,13 +76,16 @@
 
 = Marco conceptual
 
-El desarrollo de aplicaciones modernas requiere el uso de herramientas y tecnologías que permitan construir sistemas organizados, mantenibles y conectados con bases de datos. En este laboratorio se implementa una aplicación web utilizando el ecosistema de Microsoft basado en .NET, SQL Server y Entity Framework Core.
+El desarrollo de aplicaciones modernas requiere el uso de herramientas y tecnologías que permitan construir sistemas organizados, mantenibles y conectados
+con bases de datos. En este laboratorio se implementa una aplicación web utilizando el ecosistema de Microsoft basado en .NET, SQL Server y Entity
+Framework Core.
 
 == Tecnologías
 
 === ASP.NET Core
 
-ASP.NET Core es un framework de desarrollo de aplicaciones web multiplataforma desarrollado por Microsoft. Permite construir aplicaciones web, APIs y servicios utilizando el lenguaje C\# y el framework .NET.
+ASP.NET Core es un framework de desarrollo de aplicaciones web multiplataforma desarrollado por Microsoft. Permite construir aplicaciones web, APIs y
+servicios utilizando el lenguaje C\# y el framework .NET.
 
 Entre las principales características de ASP.NET Core se encuentran:
 
@@ -93,7 +96,8 @@ Entre las principales características de ASP.NET Core se encuentran:
 
 === Motor de plantillas Razor
 
-Razor es el motor de plantillas (template engine) que usa ASP.NET para generar HTML dinámico desde código C\#. La idea principal de Razor es que en un mismo archivo *.cshtml* se pueda mezclar:
+Razor es el motor de plantillas (template engine) que usa ASP.NET para generar HTML dinámico desde código C\#. La idea principal de Razor es que en un
+mismo archivo *.cshtml* se pueda mezclar:
 
 - HTML
 - código C\#
@@ -111,7 +115,10 @@ Un ejemplo de esto es:
 
 === Entity Framework Core
 
-Entity Framework Core es un ORM (Object Relational Mapper) para .NET. Un ORM permite mapear tablas de bases de datos a clases de programación, facilitando la interacción entre la aplicación y la base de datos. En lugar de escribir consultas SQL manualmente para todas las operaciones, Entity Framework Core permite trabajar utilizando objetos y clases en C\#. Las entidades representan las tablas de la base de datos, mientras que el contexto administra la conexión y las operaciones realizadas sobre dichas entidades.
+Entity Framework Core es un ORM (Object Relational Mapper) para .NET. Un ORM permite mapear tablas de bases de datos a clases de programación, facilitando
+la interacción entre la aplicación y la base de datos. En lugar de escribir consultas SQL manualmente para todas las operaciones, Entity Framework Core
+permite trabajar utilizando objetos y clases en C\#. Las entidades representan las tablas de la base de datos, mientras que el contexto administra la
+conexión y las operaciones realizadas sobre dichas entidades.
 
 === Visual Studio Community 2022
 
@@ -143,7 +150,9 @@ Estos paquetes permiten la integración entre ASP.NET Core y SQL Server mediante
 // TODO: revisar si falta informacion
 === SQL Server Express
 
-Microsoft SQL Server Express es un sistema de gestión de bases de datos relacional (RDBMS) desarrollado por Microsoft. Se utiliza para almacenar y administrar la información persistente de la aplicación. Las bases de datos relacionales organizan la información en tablas compuestas por filas y columnas, permitiendo establecer relaciones entre diferentes conjuntos de datos mediante claves primarias y foráneas.
+Microsoft SQL Server Express es un sistema de gestión de bases de datos relacional (RDBMS) desarrollado por Microsoft. Se utiliza para almacenar y
+administrar la información persistente de la aplicación. Las bases de datos relacionales organizan la información en tablas compuestas por filas y
+columnas, permitiendo establecer relaciones entre diferentes conjuntos de datos mediante claves primarias y foráneas.
 
 === SQL Server Management Studio (SSMS)
 
@@ -190,7 +199,8 @@ Este patrón divide la aplicación en tres componentes principales:
 
 ==== Modelo (Model)
 
-El modelo representa la lógica de negocio y el acceso a los datos. El modelo se encarga de interactuar con la base de datos y representar la información del sistema.
+El modelo representa la lógica de negocio y el acceso a los datos. El modelo se encarga de interactuar con la base de datos y representar la información
+del sistema.
 
 Para el laboratorio se manejaron:
 
@@ -201,7 +211,8 @@ Para el laboratorio se manejaron:
 
 ==== Vista (View)
 
-La vista corresponde a la interfaz de usuario presentada al usuario final. Su función es mostrar la información proveniente del modelo de manera organizada.
+La vista corresponde a la interfaz de usuario presentada al usuario final. Su función es mostrar la información proveniente del modelo de manera
+organizada.
 
 En aplicaciones ASP.NET Core MVC, las vistas suelen desarrollarse utilizando *Razor*.
 
@@ -219,20 +230,20 @@ Sus funciones principales son:
 
 === Patrón Repositorio
 
-El laboratorio también utiliza el patrón repositorio, el cual abstrae el acceso a los datos mediante clases especializadas.
-
-El objetivo principal es desacoplar la lógica de negocio de las operaciones de persistencia.
+El laboratorio también utiliza el patrón repositorio, el cual abstrae el acceso a los datos mediante clases especializadas. El objetivo principal es
+desacoplar la lógica de negocio de las operaciones de persistencia.
 
 Entre sus ventajas se encuentran:
 
-Mayor organización del código.
-Reutilización de lógica.
-Facilidad de mantenimiento.
-Separación de responsabilidades.
+- Mayor organización del código.
+- Reutilización de lógica.
+- Facilidad de mantenimiento.
+- Separación de responsabilidades.
 
 === Arquitectura por capas
 
-La aplicación desarrollada utilizando el patrón *MVC* puede entenderse también como un subconjunto o *caso particular* de la *arquitectura por capas*, donde cada componente cumple responsabilidades especificas y se genera comunicación entre capas adyacentes.
+La aplicación desarrollada utilizando el patrón *MVC* puede entenderse también como un subconjunto o *caso particular* de la *arquitectura por capas*,
+donde cada componente cumple responsabilidades especificas y se genera comunicación entre capas adyacentes.
 
 Extrapolando a una arquitectura de capas para el caso especifico del laboratorio, se tiene lo siguiente:
 
