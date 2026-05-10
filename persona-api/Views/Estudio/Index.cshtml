@@ -1,24 +1,44 @@
 ﻿@model List<persona_api.Models.Entities.Estudio>
 
-<h1>Lista de Estudios</h1>
+<h1>Estudios</h1>
+
+<a asp-action="Create">Crear Nuevo</a>
 
 <table border="1">
     <thead>
         <tr>
-            <th>Id Profesion</th>
-            <th>CC Persona</th>
+            <th>Profesion</th>
+            <th>Persona</th>
             <th>Fecha</th>
             <th>Universidad</th>
+            <th>Acciones</th>
         </tr>
     </thead>
+
     <tbody>
-        @foreach (var estudio in Model)
+        @foreach (var item in Model)
         {
             <tr>
-                <td>@estudio.IdProf</td>
-                <td>@estudio.CcPer</td>
-                <td>@estudio.Fecha</td>
-                <td>@estudio.Univer</td>
+                <td>@item.IdProf</td>
+                <td>@item.CcPer</td>
+                <td>@item.Fecha</td>
+                <td>@item.Univer</td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-idProf="@item.IdProf"
+                       asp-route-ccPer="@item.CcPer">
+                        Editar
+                    </a>
+
+                    |
+
+                    <a asp-action="Delete"
+                       asp-route-idProf="@item.IdProf"
+                       asp-route-ccPer="@item.CcPer">
+                        Eliminar
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

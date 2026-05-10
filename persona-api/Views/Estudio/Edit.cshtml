@@ -1,0 +1,22 @@
+﻿@model persona_api.Models.Entities.Estudio
+
+<h1>Editar Estudio</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="IdProf" />
+    <input type="hidden" asp-for="CcPer" />
+
+    <div>
+        <label>Fecha</label>
+        <input asp-for="Fecha" type="date" />
+    </div>
+
+    <div>
+        <label>Universidad</label>
+        <input asp-for="Univer" />
+    </div>
+
+    <button type="submit">Actualizar</button>
+
+</form>

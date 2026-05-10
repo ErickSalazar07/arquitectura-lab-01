@@ -1,0 +1,29 @@
+﻿@model persona_api.Models.Entities.Estudio
+
+<h1>Crear Estudio</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Id Profesion</label>
+        <input asp-for="IdProf" />
+    </div>
+
+    <div>
+        <label>CC Persona</label>
+        <input asp-for="CcPer" />
+    </div>
+
+    <div>
+        <label>Fecha</label>
+        <input asp-for="Fecha" type="date" />
+    </div>
+
+    <div>
+        <label>Universidad</label>
+        <input asp-for="Univer" />
+    </div>
+
+    <button type="submit">Guardar</button>
+
+</form>

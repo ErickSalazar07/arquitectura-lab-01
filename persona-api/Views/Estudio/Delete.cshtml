@@ -1,0 +1,20 @@
+﻿@model persona_api.Models.Entities.Estudio
+
+<h1>Eliminar Estudio</h1>
+
+<p>¿Seguro que desea eliminar este estudio?</p>
+
+<ul>
+    <li>Profesion: @Model.IdProf</li>
+    <li>Persona: @Model.CcPer</li>
+    <li>Universidad: @Model.Univer</li>
+</ul>
+
+<form asp-action="DeleteConfirmed" method="post">
+
+    <input type="hidden" name="idProf" value="@Model.IdProf" />
+    <input type="hidden" name="ccPer" value="@Model.CcPer" />
+
+    <button type="submit">Eliminar</button>
+
+</form>
