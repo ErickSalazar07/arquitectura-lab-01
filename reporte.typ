@@ -322,7 +322,7 @@ tiene una plataforma diferente, los pasos para la instalación pueden llegar a v
 *Nota:* Para la instalación de *SQL Server Management Studio 18* en este laboratorio, se asume que se esta trabajando con un *sistema operativo* Windows
 11, si se tiene una plataforma diferente, los pasos para la instalación pueden llegar a variar.
 
-- Acceder a la plataforma web de SQL Server Management Studio 18
+- Acceder a la plataforma web de SQL Server Management Studio 18.
 #image("03_sql_server_managment_studio_18/01_sql_server_managment_studio_18.png")
 
 - Ejecutar el archivo instalador en Windows.
@@ -336,42 +336,135 @@ tiene una plataforma diferente, los pasos para la instalación pueden llegar a v
 
 == Configuracion de la base de datos y creacion de entidades y relaciones
 
-*Nota:* Una vez completado los pasos anteriores, use el buscador de Windows, pude utilizar las teclas *Win* + *s* y escriba \"SQL Server Management\".
+*Nota:* Una vez completado los pasos anteriores, use el buscador de Windows, pude utilizar las teclas *Win* + *s* y escriba *\"SQL Server Management\"*.
 Posteriormente *presione la tecla Enter*. Si tiene otra plataforma, investigue como buscar y ejecutar el programa SQL Server Management Studio.
 
-- Una vez iniciado el programa, generar una conexión y dar *clic derecho en \"Databases\"* y dar *clic en la opción \"New Database\"*
+- Una vez iniciado el programa, generar una conexión y dar *clic derecho en \"Databases\"* y dar *clic en la opción \"New Database\"*.
 #image("04_configuracion_db/01_configuracion_db.png")
 
 - En el formulario que se muestra, llenar los campos *Database name* con *\"persona_db\"* y *Owner* con nombre usuario *\"sa\"*. Por ultimo dar clic en
   *botón \"OK\"*.
 #image("04_configuracion_db/02_configuracion_db.png")
+
+- Una vez creada la *base de datos \"persona_db\"*, se da *clic derecho sobre \"persona_db\"* en la parte izquierda del *panel \"Object Explorer\"* y se
+  selecciona la *opción \"New Query\"*.
 #image("04_configuracion_db/03_configuracion_db.png")
+
+- Se va a desplegar una hoja en blanco. En dicha hoja se debe *cargar o pegar* el *contendió del DDL*, todo esto en *sintaxis valida para SQL Server*.
 #image("04_configuracion_db/04_configuracion_db.png")
+
+- En la *cinta de opciones*, buscar el botón con *icono* #text(fill: green)[ #sym.gt.tri ] y *texto \"Execute\"*. Una vez encontrado, hacer clic sobre
+  dicho botón para *ejecutar el script del DDL*. En la terminal inferior, aparecerá un *mensaje \"Commands completed successfully.\"* el cual confirmara el
+  *éxito* de la ejecución *del DDL*.
 #image("04_configuracion_db/05_configuracion_db.png")
+
+- Ademas en el *panel \"Object Explorer\"* se puede verificar la *creación de las tablas/entidades* al hacer *clic izquierdo sobre \"persona_db\"* y
+  posteriormente hacer *clic izquierdo sobre \"Tables\"*.
 #image("04_configuracion_db/06_configuracion_db.png")
 
 == Instalar Visual Studio Community 2022
 
+*Nota:* Para la instalación de *Visual Studio Community 2022* en este laboratorio, se asume que se esta trabajando con un *sistema operativo* Windows 11,
+si se tiene una plataforma diferente, los pasos para la instalación pueden llegar a variar.
+
+- Acceder a la plataforma web de Visual Studio Community 2022.
 #image("05_instalar_visual_studio_community_2022/01_instalar_visual_studio_community.png")
+
+- Ejecutar el archivo instalador en Windows.
 #image("05_instalar_visual_studio_community_2022/02_instalar_visual_studio_community.png")
+
+- Se abrirá el instalador de características.
 #image("05_instalar_visual_studio_community_2022/03_instalar_visual_studio_community.png")
+
+- Sobre la pestaña *\"Cargas de trabajo\"*, dentro del apartado *\"Web y nube\"*, buscar y seleccionar la opción *\"Desarrollo de ASP.NET y web\"*.
 #image("05_instalar_visual_studio_community_2022/04_instalar_visual_studio_community.png")
+
+- Sobre la pestaña *\"Cargas de trabajo\"*, dentro del apartado *\"Otros conjuntos de herramientas\"*, buscar y seleccionar la opción *\"Almacenamiento y
+  procesamiento de datos\"*.
 #image("05_instalar_visual_studio_community_2022/05_instalar_visual_studio_community.png")
+
+- Sobre la pestaña *\"Componentes individuales\"*, escribir en el *buscador la palabra \"Caracte\"*, y con el resultado de esta búsqueda, seleccionar
+  *\"Características avanzadas de ASP.NET\"* y *\"Plantillas de proyecto y de elemento de .NET Framework\"*. Una vez realizado lo anterior, dar clic en el
+  *botón \"Instalar\"*.
 #image("05_instalar_visual_studio_community_2022/06_instalar_visual_studio_community.png")
+
+- Esperar a que *termine la instalación*.
 #image("05_instalar_visual_studio_community_2022/07_instalar_visual_studio_community.png")
 
 == Proyecto web MVC en .NET con Visual Studio
 
+*Nota:* Una vez completada la instalación de *Visual Studio*, use el buscador de Windows, pude utilizar las teclas *Win* + *s* y escriba *\"Visual
+Studio\"*. Posteriormente *presione la tecla Enter*. Si tiene otra plataforma, investigue como buscar y ejecutar el programa Visual Studio.
+
+- Procesa a dar clic izquierdo en el *botón \"Crear un proyecto\"*.
+- #text(fill: red)[ *Nota importante:* ] Al configurar el proyecto se debe *deshabilitar configurar HTTPS* y también se debe *deshabilitar autenticación*.
 #image("06_visual_studio_proyecto/01_visual_studio_proyecto.png")
+
+- De clic izquierdo en el buscador, y *escriba \"MVC\"*. Seleccione la *opción \"Aplicación web de ASP.NET Core (Modelo-Vista-Controlador)\"*.
 #image("06_visual_studio_proyecto/02_visual_studio_proyecto.png")
+
+- Una vez se haya creado el proyecto. En la cinta de opciones dar clic izquierdo en el *apartado \"Ver\"* y posteriormente de clic izquierdo en la *opción
+  \"Explorador de objetos de SQL Server\"*.
 #image("06_visual_studio_proyecto/03_visual_studio_proyecto.png")
+
+- Conectarse con el *nombre del servidor*, y con el *nombre de la base de datos* que para este laboratorio es *\"persona_db\"*.
 #image("06_visual_studio_proyecto/04_visual_studio_proyecto.png")
+
+- En la parte izquierda, dentro del *panel \"Explorador de objetos de SQL Server\"*, se podrá corroborar que se agrego la *nueva conexión de SQL Server*.
 #image("06_visual_studio_proyecto/05_visual_studio_proyecto.png")
+
+- Una vez realizada la conexión. En la cinta de opciones dar clic izquierdo en el *apartado \"Herramientas\"*,  posteriormente de clic izquierdo en la
+  *opción \"Administrador de paquetes NuGet\"* y por ultimo de clic izquierdo en la *sub-opción \"Consola del Administrador de paquetes\"*.
 #image("06_visual_studio_proyecto/06_visual_studio_proyecto.png")
+
+- Se abrirá una *consola* la cual se utiliza para *administrar los paquetes del proyecto*. Si se requiere obtener algo de *documentación* sobre los
+  *comandos* disponibles y su manejo, *corra el siguiente comando* en la *consola:*
+
+  #box(
+    stroke: 1pt + gray,
+    inset: 10pt,
+    radius: 2pt,
+    fill: rgb("#f5f5f5"),
+    [ ```sh get-help NuGet ``` ]
+  )
 #image("06_visual_studio_proyecto/07_visual_studio_proyecto.png")
+
+- Una vez familiarizado con los comandos básicos, el *comando* que se utilizara para *instalar* los *diferentes paquetes* se *muestra a continuación*
+  junto con el *primer paquete a instalar:*
+
+  #box(
+    stroke: 1pt + gray,
+    inset: 10pt,
+    radius: 2pt,
+    fill: rgb("#f5f5f5"),
+    [ ```sh Install-Package Microsoft.EntityFrameworkCore ``` ]
+  )
 #image("06_visual_studio_proyecto/08_visual_studio_proyecto.png")
+
+- El *comando* para *instalar* el *segundo paquete* a usar se *muestra a continuación:*
+
+  #box(
+    stroke: 1pt + gray,
+    inset: 10pt,
+    radius: 2pt,
+    fill: rgb("#f5f5f5"),
+    [ ```sh Install-Package Microsoft.EntityFrameworkCore.SqlServer ``` ]
+  )
 #image("06_visual_studio_proyecto/09_visual_studio_proyecto.png")
+
+- El *comando* para *instalar* el *tercer paquete* a usar se *muestra a continuación:*
+
+  #box(
+    stroke: 1pt + gray,
+    inset: 10pt,
+    radius: 2pt,
+    fill: rgb("#f5f5f5"),
+    [ ```sh Install-Package Microsoft.EntityFrameworkCore.Tools ``` ]
+  )
 #image("06_visual_studio_proyecto/10_visual_studio_proyecto.png")
+
+- Una vez realizada todo la configuración anterior. Ya se puede proceder a *correr el proyecto*. Una vez se de clic izquierdo en el *botón de ejecutar sin
+  depurar*, el servicio se podrá *acceder* a través de _#text(fill: blue)[ http://localhost:5097 ]_
 #image("06_visual_studio_proyecto/11_visual_studio_proyecto.png")
 
 // ========================================
@@ -386,3 +479,4 @@ Posteriormente *presione la tecla Enter*. Si tiene otra plataforma, investigue c
 // ========================================
 
 = Referencias
+
