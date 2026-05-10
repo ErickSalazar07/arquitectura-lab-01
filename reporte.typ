@@ -37,27 +37,28 @@
 #set page(numbering: none)
 
 #align(center)[
+  #v(2cm)
 
-#v(2cm)
+  #text(size: 26pt, weight: "bold")[ Arquitectura Software ]
 
-#text(size: 22pt, weight: "bold")[ Arquitectura Software - Laboratorio 01 ]
+  #v(2cm)
 
-#v(4cm)
+  #text(size: 22pt, weight: "bold")[ Laboratorio 01]
 
+  #v(4cm)
 
-#text(size: 12pt)[
-  Augusto Pedicino Florez \
-  Erick Salazar Suarez \
-  Felipe Garrido Flores
-]
+  #text(size: 16pt)[
+    Augusto Pedicino Florez \
+    Erick Salazar Suarez \
+    Felipe Garrido Flores
+  ]
 
-#v(5.5cm)
+  #v(8cm)
 
-#text(size: 15pt)[ Pontificia Universidad Javeriana ]
-
-#v(2cm)
-
-#text(size: 15pt)[ #datetime.today().display() ]
+  #text(size: 15pt)[
+    Pontificia Universidad Javeriana \
+    #datetime.today().display()
+  ]
 ]
 
 // ========================================
@@ -280,6 +281,98 @@ La separación en capas facilita el mantenimiento y evolución del sistema
 
 = Procedimiento
 
+== Repositorio Git/GitHub
+
+
+- Acceder a la plataforma web GitHub.
+#image("01_git_github/01_git_github.png")
+
+- En el dashboard, dar clic en crear un nuevo repositorio.
+#image("01_git_github/02_git_github.png")
+
+- En los campos, llenar únicamente el nombre del repositorio con \"personaapi-dotnet\", el resto son opcionales así que se dejan en blanco de momento.
+#image("01_git_github/03_git_github.png")
+
+== Instalacion SQL Server 2022 express
+
+*Nota:* Para la instalación de *SQL Server 2022 express* en este laboratorio, se asume que se esta trabajando con un *sistema operativo* Windows 11, si se
+tiene una plataforma diferente, los pasos para la instalación pueden llegar a variar.
+
+
+- Acceder a la plataforma web de SQL Server 2022 express.
+#image("02_sql_server_2022_express/01_sql_server_2022_express.png")
+
+- Ejecutar el archivo instalador en Windows.
+#image("02_sql_server_2022_express/02_sql_server_2022_express.png")
+
+- Elegir la *opcion \"Basic\"*.
+#image("02_sql_server_2022_express/03_sql_server_2022_express.png")
+
+- Aceptar términos y condiciones.
+#image("02_sql_server_2022_express/04_sql_server_2022_express.png")
+
+- Usar la *ruta por defecto* para la *instalación* de SQL Server.
+#image("02_sql_server_2022_express/05_sql_server_2022_express.png")
+
+- Una vez terminada la instalación dar clic en el *botón \"Close\"*.
+#image("02_sql_server_2022_express/06_sql_server_2022_express.png")
+
+== Instalacion SQL Server Management Studio 18
+
+*Nota:* Para la instalación de *SQL Server Management Studio 18* en este laboratorio, se asume que se esta trabajando con un *sistema operativo* Windows
+11, si se tiene una plataforma diferente, los pasos para la instalación pueden llegar a variar.
+
+- Acceder a la plataforma web de SQL Server Management Studio 18
+#image("03_sql_server_managment_studio_18/01_sql_server_managment_studio_18.png")
+
+- Ejecutar el archivo instalador en Windows.
+#image("03_sql_server_managment_studio_18/02_sql_server_managment_studio_18.png")
+
+- Usar la *ruta por defecto* para la *instalación* de SQL Server Management y dar clic en el *botón \"Install\"*.
+#image("03_sql_server_managment_studio_18/03_sql_server_managment_studio_18.png")
+
+- Una vez terminada la instalación dar clic en el *botón \"Close\"*.
+#image("03_sql_server_managment_studio_18/04_sql_server_managment_studio_18.png")
+
+== Configuracion de la base de datos y creacion de entidades y relaciones
+
+*Nota:* Una vez completado los pasos anteriores, use el buscador de Windows, pude utilizar las teclas *Win* + *s* y escriba \"SQL Server Management\".
+Posteriormente *presione la tecla Enter*. Si tiene otra plataforma, investigue como buscar y ejecutar el programa SQL Server Management Studio.
+
+- Una vez iniciado el programa, generar una conexión y dar *clic derecho en \"Databases\"* y dar *clic en la opción \"New Database\"*
+#image("04_configuracion_db/01_configuracion_db.png")
+
+- En el formulario que se muestra, llenar los campos *Database name* con *\"persona_db\"* y *Owner* con nombre usuario *\"sa\"*. Por ultimo dar clic en
+  *botón \"OK\"*.
+#image("04_configuracion_db/02_configuracion_db.png")
+#image("04_configuracion_db/03_configuracion_db.png")
+#image("04_configuracion_db/04_configuracion_db.png")
+#image("04_configuracion_db/05_configuracion_db.png")
+#image("04_configuracion_db/06_configuracion_db.png")
+
+== Instalar Visual Studio Community 2022
+
+#image("05_instalar_visual_studio_community_2022/01_instalar_visual_studio_community.png")
+#image("05_instalar_visual_studio_community_2022/02_instalar_visual_studio_community.png")
+#image("05_instalar_visual_studio_community_2022/03_instalar_visual_studio_community.png")
+#image("05_instalar_visual_studio_community_2022/04_instalar_visual_studio_community.png")
+#image("05_instalar_visual_studio_community_2022/05_instalar_visual_studio_community.png")
+#image("05_instalar_visual_studio_community_2022/06_instalar_visual_studio_community.png")
+#image("05_instalar_visual_studio_community_2022/07_instalar_visual_studio_community.png")
+
+== Proyecto web MVC en .NET con Visual Studio
+
+#image("06_visual_studio_proyecto/01_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/02_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/03_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/04_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/05_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/06_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/07_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/08_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/09_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/10_visual_studio_proyecto.png")
+#image("06_visual_studio_proyecto/11_visual_studio_proyecto.png")
 
 // ========================================
 // CONCLUSIONES
@@ -293,4 +386,3 @@ La separación en capas facilita el mantenimiento y evolución del sistema
 // ========================================
 
 = Referencias
-
