@@ -1,0 +1,25 @@
+﻿@model List<persona_api.Models.Entities.Estudio>
+
+<h1>Lista de Estudios</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id Profesion</th>
+            <th>CC Persona</th>
+            <th>Fecha</th>
+            <th>Universidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var estudio in Model)
+        {
+            <tr>
+                <td>@estudio.IdProf</td>
+                <td>@estudio.CcPer</td>
+                <td>@estudio.Fecha</td>
+                <td>@estudio.Univer</td>
+            </tr>
+        }
+    </tbody>
+</table>
