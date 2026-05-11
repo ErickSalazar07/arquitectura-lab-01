@@ -1,16 +1,61 @@
 @model persona_api.Models.Entities.Telefono
 
-<h1>Eliminar Teléfono</h1>
+<div class="container mt-4">
 
-<p>¿Seguro que desea eliminar este teléfono?</p>
+    <div class="card shadow p-4">
 
-<ul>
-    <li>Número: @Model.Num</li>
-    <li>Operador: @Model.Oper</li>
-    <li>Dueño (CC): @Model.Duenio</li>
-</ul>
+        <h1 class="text-danger mb-4">
+            Eliminar Teléfono
+        </h1>
 
-<form asp-action="DeleteConfirmed" method="post">
-    <input type="hidden" name="num" value="@Model.Num" />
-    <button type="submit">Eliminar</button>
-</form>
+        <div class="alert alert-warning">
+
+            ¿Seguro que desea eliminar este teléfono?
+
+        </div>
+
+        <ul class="list-group mb-4">
+
+            <li class="list-group-item">
+                <strong>Número:</strong> @Model.Num
+            </li>
+
+            <li class="list-group-item">
+                <strong>Operador:</strong> @Model.Oper
+            </li>
+
+            <li class="list-group-item">
+                <strong>Dueño (CC):</strong> @Model.Duenio
+            </li>
+
+        </ul>
+
+        <form asp-action="DeleteConfirmed" method="post">
+
+            <input type="hidden"
+                   name="num"
+                   value="@Model.Num" />
+
+            <div class="d-flex gap-2">
+
+                <button type="submit"
+                        class="btn btn-danger">
+
+                    Eliminar
+
+                </button>
+
+                <a asp-action="Index"
+                       class="btn btn-secondary">
+
+                    Volver
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

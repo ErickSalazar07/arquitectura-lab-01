@@ -1,35 +1,91 @@
 @model List<persona_api.Models.Entities.Persona>
 
-<h1>Personas</h1>
+<div class="container mt-4">
 
-<a asp-action="Create">Crear Nuevo</a>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        
+        <a href="/"
+               class="btn btn-secondary">
+            Volver
+        </a>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Cédula</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Género</th>
-            <th>Edad</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Cc</td>
-                <td>@item.Nombre</td>
-                <td>@item.Apellido</td>
-                <td>@item.Genero</td>
-                <td>@item.Edad</td>
-                <td>
-                    <a asp-action="Edit" asp-route-cc="@item.Cc">Editar</a>
-                    |
-                    <a asp-action="Delete" asp-route-cc="@item.Cc">Eliminar</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <h1>
+            Personas
+        </h1>
+
+        <a asp-action="Create"
+               class="btn btn-primary">
+
+            Crear Nuevo
+
+        </a>
+
+    </div>
+
+    <div class="card shadow p-3">
+
+        <table class="table table-striped table-hover align-middle">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Cédula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Género</th>
+                    <th>Edad</th>
+                    <th>Acciones</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.Cc</td>
+
+                        <td>@item.Nombre</td>
+
+                        <td>@item.Apellido</td>
+
+                        <td>@item.Genero</td>
+
+                        <td>@item.Edad</td>
+
+                        <td>
+
+                            <div class="d-flex gap-2">
+
+                                <a asp-action="Edit"
+                                       asp-route-cc="@item.Cc"
+                                       class="btn btn-warning btn-sm">
+
+                                    Editar
+
+                                </a>
+
+                                <a asp-action="Delete"
+                                       asp-route-cc="@item.Cc"
+                                       class="btn btn-danger btn-sm">
+
+                                    Eliminar
+
+                                </a>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

@@ -2,35 +2,51 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="container mt-5">
 
-    <h1 class="display-4">
-        Persona API MVC
-    </h1>
+    <div class="card shadow p-5 text-center">
 
-    <p>
-        CRUDs disponibles:
-    </p>
+        <h1 class="display-4 mb-3">
+            Persona API MVC
+        </h1>
 
-    <hr />
+        <p class="lead">
+            CRUDs disponibles
+        </p>
 
-    <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+        <hr class="mb-4" />
 
-        <a class="btn btn-primary" href="/Persona">
-            Ir a Personas
-        </a>
+        <div class="d-grid gap-3 col-md-4 mx-auto">
 
-        <a class="btn btn-success" href="/Estudio">
-            Ir a Estudios
-        </a>
+            <a class="btn btn-primary btn-lg"
+                   href="/Persona">
 
-        <a class="btn btn-warning" href="/Profesion">
-            Ir a Profesiones
-        </a>
+                Personas
 
-        <a class="btn btn-info" href="/Telefono">
-            Ir a Telefonos
-        </a>
+            </a>
+
+            <a class="btn btn-success btn-lg"
+                   href="/Estudio">
+
+                Estudios
+
+            </a>
+
+            <a class="btn btn-warning btn-lg"
+                   href="/Profesion">
+
+                Profesiones
+
+            </a>
+
+            <a class="btn btn-info btn-lg"
+                   href="/Telefono">
+
+                Teléfonos
+
+            </a>
+
+        </div>
 
     </div>
 

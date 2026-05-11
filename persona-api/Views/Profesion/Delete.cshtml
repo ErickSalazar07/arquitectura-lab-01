@@ -1,20 +1,57 @@
 ﻿@model persona_api.Models.Entities.Profesion
 
-<h1>Eliminar Profesion</h1>
+<div class="container mt-4">
 
-<p>¿Desea eliminar esta profesion?</p>
+    <div class="card shadow p-4">
 
-<ul>
-    <li>ID: @Model.Id</li>
-    <li>Nombre: @Model.Nom</li>
-</ul>
+        <h1 class="text-danger mb-4">
+            Eliminar Profesión
+        </h1>
 
-<form asp-action="DeleteConfirmed" method="post">
+        <div class="alert alert-warning">
 
-    <input type="hidden" name="id" value="@Model.Id" />
+            ¿Desea eliminar esta profesión?
 
-    <button type="submit">
-        Eliminar
-    </button>
+        </div>
 
-</form>
+        <ul class="list-group mb-4">
+
+            <li class="list-group-item">
+                <strong>ID:</strong> @Model.Id
+            </li>
+
+            <li class="list-group-item">
+                <strong>Nombre:</strong> @Model.Nom
+            </li>
+
+        </ul>
+
+        <form asp-action="DeleteConfirmed" method="post">
+
+            <input type="hidden"
+                   name="id"
+                   value="@Model.Id" />
+
+            <div class="d-flex gap-2">
+
+                <button type="submit"
+                        class="btn btn-danger">
+
+                    Eliminar
+
+                </button>
+
+                <a asp-action="Index"
+                       class="btn btn-secondary">
+
+                    Volver
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

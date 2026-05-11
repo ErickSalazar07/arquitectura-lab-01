@@ -1,20 +1,65 @@
 ﻿@model persona_api.Models.Entities.Estudio
 
-<h1>Eliminar Estudio</h1>
+<div class="container mt-4">
 
-<p>¿Seguro que desea eliminar este estudio?</p>
+    <div class="card shadow p-4">
 
-<ul>
-    <li>Profesion: @Model.IdProf</li>
-    <li>Persona: @Model.CcPer</li>
-    <li>Universidad: @Model.Univer</li>
-</ul>
+        <h1 class="text-danger mb-4">
+            Eliminar Estudio
+        </h1>
 
-<form asp-action="DeleteConfirmed" method="post">
+        <div class="alert alert-warning">
 
-    <input type="hidden" name="idProf" value="@Model.IdProf" />
-    <input type="hidden" name="ccPer" value="@Model.CcPer" />
+            ¿Seguro que desea eliminar este estudio?
 
-    <button type="submit">Eliminar</button>
+        </div>
 
-</form>
+        <ul class="list-group mb-4">
+
+            <li class="list-group-item">
+                <strong>Profesión:</strong> @Model.IdProf
+            </li>
+
+            <li class="list-group-item">
+                <strong>Persona:</strong> @Model.CcPer
+            </li>
+
+            <li class="list-group-item">
+                <strong>Universidad:</strong> @Model.Univer
+            </li>
+
+        </ul>
+
+        <form asp-action="DeleteConfirmed" method="post">
+
+            <input type="hidden"
+                   name="idProf"
+                   value="@Model.IdProf" />
+
+            <input type="hidden"
+                   name="ccPer"
+                   value="@Model.CcPer" />
+
+            <div class="d-flex gap-2">
+
+                <button type="submit"
+                        class="btn btn-danger">
+
+                    Eliminar
+
+                </button>
+
+                <a asp-action="Index"
+                       class="btn btn-secondary">
+
+                    Volver
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
