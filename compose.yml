@@ -1,0 +1,47 @@
+services:
+    ngrok:
+        image: ngrok/ngrok:latest
+        restart: unless-stopped
+        env_file:
+            - .env
+        command:
+            - "http"
+            - "api:8080"
+        depends_on:
+            - api
+
+    api:
+        build: persona-api
+        ports:
+            - 8080:8080
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ConnectionStrings__DefaultConnection=Server=sql-express,1433;Database=persona_db;User Id=sa;Password=YourStrong@Password123;TrustServerCertificate=True
+        depends_on:
+            - sql-express
+
+    sql-express:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        restart: unless-stopped
+        ports:
+            - "1433:1433"
+        environment:
+            - ACCEPT_EULA=Y
+            - MSSQL_SA_PASSWORD=YourStrong@Password123
+            - MSSQL_PID=Express
+        volumes:
+            - mssql_data:/var/opt/mssql
+
+    db-init:
+        image: mcr.microsoft.com/mssql-tools:latest
+        restart: "no"
+        depends_on:
+        - sql-express
+        volumes:
+        - ./:/scripts:ro
+        environment:
+        - MSSQL_SA_PASSWORD=YourStrong@Password123
+        entrypoint: ["/bin/bash","-c","for f in /scripts/*.sql; do echo Applying $$f; until /opt/mssql-tools/bin/sqlcmd -S sql-express,1433 -U sa -P \"$$MSSQL_SA_PASSWORD\" -i \"$$f\"; do echo 'Retrying in 2s...'; sleep 2; done; done; echo 'Migrations applied'"]
+
+volumes:
+    mssql_data:

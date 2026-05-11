@@ -1,3 +1,4 @@
+using System;
 using Microsoft.EntityFrameworkCore;
 using persona_api.Models.Entities;
 using persona_api.Repositories;
@@ -7,9 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+var envConn = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+var connectionString = !string.IsNullOrEmpty(envConn)
+    ? envConn
+    : builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<PersonaDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IEstudioRepository, EstudioRepository>();
 builder.Services.AddScoped<IPersonaRepository, PersonaRepository>();
