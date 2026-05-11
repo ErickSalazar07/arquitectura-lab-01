@@ -15,7 +15,6 @@ builder.Services.AddScoped<IEstudioRepository, EstudioRepository>();
 builder.Services.AddScoped<IPersonaRepository, PersonaRepository>();
 builder.Services.AddScoped<ITelefonoRepository, TelefonoRepository>();
 
-builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
