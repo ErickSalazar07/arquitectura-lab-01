@@ -6,19 +6,31 @@
 
     <div>
         <label>Número</label>
+
         <input asp-for="Num" />
     </div>
 
     <div>
         <label>Operador</label>
+
         <input asp-for="Oper" />
     </div>
 
     <div>
-        <label>Cédula Dueño</label>
-        <input asp-for="Duenio" />
+        <label>Dueño</label>
+
+        <select asp-for="Duenio"
+                asp-items="ViewBag.Personas">
+
+            <option value="">
+                Seleccione una persona
+            </option>
+
+        </select>
     </div>
 
-    <button type="submit">Guardar</button>
+    <button type="submit">
+        Guardar
+    </button>
 
 </form>

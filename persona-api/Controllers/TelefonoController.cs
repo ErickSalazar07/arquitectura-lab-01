@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using persona_api.Models.Entities;
 using persona_api.Repositories.Interfaces;
 
@@ -6,31 +7,48 @@ namespace persona_api.Controllers
 {
     public class TelefonoController : Controller
     {
-        private readonly ITelefonoRepository _repository;
+        private readonly ITelefonoRepository _telefonoRepository;
 
-        public TelefonoController(ITelefonoRepository repository)
+        private readonly IPersonaRepository _personaRepository;
+
+        public TelefonoController(ITelefonoRepository repository, IPersonaRepository personaRepository)
         {
-            _repository = repository;
+            _telefonoRepository = repository;
+            _personaRepository = personaRepository;
         }
 
         // ------- get ------
         public IActionResult Index()
         {
-            var telefonos = _repository.FindAll();
+            var telefonos = _telefonoRepository.FindAll();
             return View(telefonos);
         }
 
-        // ------- create ------
+        // =========================
+        // CREATE GET
+        // =========================
         [HttpGet]
         public IActionResult Create()
         {
+            ViewBag.Personas = _personaRepository.FindAll()
+                .Select(p => new SelectListItem
+                {
+                    Value = p.Cc.ToString(),
+                    Text = $"{p.Cc} - {p.Nombre} {p.Apellido}"
+                })
+                .ToList();
+
             return View();
         }
 
+        // =========================
+        // CREATE POST
+        // =========================
         [HttpPost]
         public IActionResult Create(Telefono telefono)
         {
-            _repository.CreateTelefono(telefono);
+            _telefonoRepository.CreateTelefono(telefono);
+
             return RedirectToAction("Index");
         }
 
@@ -38,15 +56,24 @@ namespace persona_api.Controllers
         [HttpGet]
         public IActionResult Edit(string num)
         {
-            var telefono = _repository.FindById(num);
+            var telefono = _telefonoRepository.FindById(num);
             if (telefono == null) return NotFound();
+
+
+            ViewBag.Personas = _personaRepository.FindAll()
+                .Select(p => new SelectListItem
+                {
+                    Value = p.Cc.ToString(),
+                    Text = $"{p.Cc} - {p.Nombre} {p.Apellido}"
+                }).ToList();
+
             return View(telefono);
         }
 
         [HttpPost]
         public IActionResult Edit(Telefono telefono)
         {
-            _repository.UpdateTelefono(telefono);
+            _telefonoRepository.UpdateTelefono(telefono);
             return RedirectToAction("Index");
         }
 
@@ -54,7 +81,7 @@ namespace persona_api.Controllers
         [HttpGet]
         public IActionResult Delete(string num)
         {
-            var telefono = _repository.FindById(num);
+            var telefono = _telefonoRepository.FindById(num);
             if (telefono == null) return NotFound();
             return View(telefono);
         }
@@ -62,7 +89,7 @@ namespace persona_api.Controllers
         [HttpPost]
         public IActionResult DeleteConfirmed(string num)
         {
-            _repository.DeleteById(num);
+            _telefonoRepository.DeleteById(num);
             return RedirectToAction("Index");
         }
     }

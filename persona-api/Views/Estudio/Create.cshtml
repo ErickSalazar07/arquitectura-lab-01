@@ -5,25 +5,46 @@
 <form asp-action="Create" method="post">
 
     <div>
-        <label>Id Profesion</label>
-        <input asp-for="IdProf" />
+        <label>Profesión</label>
+
+        <select asp-for="IdProf"
+                asp-items="ViewBag.Profesiones">
+
+            <option value="">
+                Seleccione una profesión
+            </option>
+
+        </select>
     </div>
 
     <div>
-        <label>CC Persona</label>
-        <input asp-for="CcPer" />
+        <label>Persona</label>
+
+        <select asp-for="CcPer"
+                asp-items="ViewBag.Personas">
+
+            <option value="">
+                Seleccione una persona
+            </option>
+
+        </select>
     </div>
 
     <div>
         <label>Fecha</label>
-        <input asp-for="Fecha" type="date" />
+
+        <input asp-for="Fecha"
+               type="date" />
     </div>
 
     <div>
         <label>Universidad</label>
+
         <input asp-for="Univer" />
     </div>
 
-    <button type="submit">Guardar</button>
+    <button type="submit">
+        Guardar
+    </button>
 
 </form>
