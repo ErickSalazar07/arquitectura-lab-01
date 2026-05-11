@@ -12,6 +12,8 @@ builder.Services.AddDbContext<PersonaDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IEstudioRepository, EstudioRepository>();
+builder.Services.AddScoped<IPersonaRepository, PersonaRepository>();
+builder.Services.AddScoped<ITelefonoRepository, TelefonoRepository>();
 
 var app = builder.Build();
 
