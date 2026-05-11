@@ -16,6 +16,7 @@ builder.Services.AddScoped<IPersonaRepository, PersonaRepository>();
 builder.Services.AddScoped<ITelefonoRepository, TelefonoRepository>();
 builder.Services.AddScoped<IProfesionRepository, ProfesionRepository>();
 
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
