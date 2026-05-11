@@ -1,11 +1,11 @@
 -- Crear la base de datos si no existe
-IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'arq_per_db')
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'persona_db')
 BEGIN
-    CREATE DATABASE arq_per_db;
+    CREATE DATABASE persona_db;
 END
 GO
 
-USE arq_per_db;
+USE persona_db;
 GO
 
 -- -----------------------------------------------------
