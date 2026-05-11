@@ -1,0 +1,21 @@
+@model persona_api.Models.Entities.Telefono
+
+<h1>Editar Teléfono</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Num" />
+
+    <div>
+        <label>Operador</label>
+        <input asp-for="Oper" />
+    </div>
+
+    <div>
+        <label>Cédula Dueño</label>
+        <input asp-for="Duenio" />
+    </div>
+
+    <button type="submit">Actualizar</button>
+
+</form>

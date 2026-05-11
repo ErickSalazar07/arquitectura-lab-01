@@ -1,0 +1,16 @@
+@model persona_api.Models.Entities.Telefono
+
+<h1>Eliminar Teléfono</h1>
+
+<p>¿Seguro que desea eliminar este teléfono?</p>
+
+<ul>
+    <li>Número: @Model.Num</li>
+    <li>Operador: @Model.Oper</li>
+    <li>Dueño (CC): @Model.Duenio</li>
+</ul>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="num" value="@Model.Num" />
+    <button type="submit">Eliminar</button>
+</form>

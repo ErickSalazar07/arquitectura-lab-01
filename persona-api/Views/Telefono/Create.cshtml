@@ -1,0 +1,24 @@
+@model persona_api.Models.Entities.Telefono
+
+<h1>Crear Teléfono</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Número</label>
+        <input asp-for="Num" />
+    </div>
+
+    <div>
+        <label>Operador</label>
+        <input asp-for="Oper" />
+    </div>
+
+    <div>
+        <label>Cédula Dueño</label>
+        <input asp-for="Duenio" />
+    </div>
+
+    <button type="submit">Guardar</button>
+
+</form>
