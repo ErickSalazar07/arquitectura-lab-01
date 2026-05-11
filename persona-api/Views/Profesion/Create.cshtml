@@ -1,0 +1,26 @@
+﻿@model persona_api.Models.Entities.Profesion
+
+<h1>Crear Profesion</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>ID</label>
+        <input asp-for="Id" />
+    </div>
+
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nom" />
+    </div>
+
+    <div>
+        <label>Descripcion</label>
+        <input asp-for="Des" />
+    </div>
+
+    <button type="submit">
+        Guardar
+    </button>
+
+</form>

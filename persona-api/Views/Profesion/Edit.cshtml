@@ -1,0 +1,23 @@
+﻿@model persona_api.Models.Entities.Profesion
+
+<h1>Editar Profesion</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nom" />
+    </div>
+
+    <div>
+        <label>Descripcion</label>
+        <input asp-for="Des" />
+    </div>
+
+    <button type="submit">
+        Actualizar
+    </button>
+
+</form>

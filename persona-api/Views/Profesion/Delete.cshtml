@@ -1,0 +1,20 @@
+﻿@model persona_api.Models.Entities.Profesion
+
+<h1>Eliminar Profesion</h1>
+
+<p>¿Desea eliminar esta profesion?</p>
+
+<ul>
+    <li>ID: @Model.Id</li>
+    <li>Nombre: @Model.Nom</li>
+</ul>
+
+<form asp-action="DeleteConfirmed" method="post">
+
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <button type="submit">
+        Eliminar
+    </button>
+
+</form>

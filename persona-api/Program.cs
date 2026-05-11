@@ -14,6 +14,7 @@ builder.Services.AddDbContext<PersonaDbContext>(options =>
 builder.Services.AddScoped<IEstudioRepository, EstudioRepository>();
 builder.Services.AddScoped<IPersonaRepository, PersonaRepository>();
 builder.Services.AddScoped<ITelefonoRepository, TelefonoRepository>();
+builder.Services.AddScoped<IProfesionRepository, ProfesionRepository>();
 
 var app = builder.Build();
 
