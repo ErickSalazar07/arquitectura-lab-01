@@ -1,0 +1,65 @@
+﻿@model persona_api.Models.Entities.Estudio
+
+<div class="container mt-4">
+
+    <div class="card shadow p-4">
+
+        <h1 class="text-danger mb-4">
+            Eliminar Estudio
+        </h1>
+
+        <div class="alert alert-warning">
+
+            ¿Seguro que desea eliminar este estudio?
+
+        </div>
+
+        <ul class="list-group mb-4">
+
+            <li class="list-group-item">
+                <strong>Profesión:</strong> @Model.IdProf
+            </li>
+
+            <li class="list-group-item">
+                <strong>Persona:</strong> @Model.CcPer
+            </li>
+
+            <li class="list-group-item">
+                <strong>Universidad:</strong> @Model.Univer
+            </li>
+
+        </ul>
+
+        <form asp-action="DeleteConfirmed" method="post">
+
+            <input type="hidden"
+                   name="idProf"
+                   value="@Model.IdProf" />
+
+            <input type="hidden"
+                   name="ccPer"
+                   value="@Model.CcPer" />
+
+            <div class="d-flex gap-2">
+
+                <button type="submit"
+                        class="btn btn-danger">
+
+                    Eliminar
+
+                </button>
+
+                <a asp-action="Index"
+                       class="btn btn-secondary">
+
+                    Volver
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

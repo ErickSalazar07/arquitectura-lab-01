@@ -106,9 +106,7 @@ Para el laboratorio 1 el procedimiento que deben hacer es el siguiente
     10. en la Consola del Administrador de paquetes escribir
         1. <!-- se usa ```sh para un resaltado de sintaxis, pero el comando inferior no es sintaxis shell o alguna variacion de shell como bash o zsh -->
         ```sh
-        Scaffold-DbContext
-        "Server=localhost\SQLEXPRESS;Database=persona_db;Trusted_Connection=True;TrustServerCertificate=true"
-        Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models/Entities
+        Scaffold-DbContext "Server=localhost\SQLEXPRESS;Database=persona_db;Trusted_Connection=True;TrustServerCertificate=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models/Entities
         ```
         2. se crean las clases entidad a partir de las tablas existentes de la base de datos y el contexto
         3. agregar la cadena de coneccion en **appsettings.json**

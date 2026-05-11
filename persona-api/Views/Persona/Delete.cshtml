@@ -1,0 +1,68 @@
+@model persona_api.Models.Entities.Persona
+
+<div class="container mt-4">
+
+    <div class="card shadow p-4">
+
+        <h1 class="text-danger mb-4">
+            Eliminar Persona
+        </h1>
+
+        <div class="alert alert-warning">
+
+            ¿Seguro que desea eliminar esta persona?
+
+        </div>
+
+        <ul class="list-group mb-4">
+
+            <li class="list-group-item">
+                <strong>Cédula:</strong> @Model.Cc
+            </li>
+
+            <li class="list-group-item">
+                <strong>Nombre:</strong>
+                @Model.Nombre @Model.Apellido
+            </li>
+
+            <li class="list-group-item">
+                <strong>Género:</strong>
+                @Model.Genero
+            </li>
+
+            <li class="list-group-item">
+                <strong>Edad:</strong>
+                @Model.Edad
+            </li>
+
+        </ul>
+
+        <form asp-action="DeleteConfirmed" method="post">
+
+            <input type="hidden"
+                   name="cc"
+                   value="@Model.Cc" />
+
+            <div class="d-flex gap-2">
+
+                <button type="submit"
+                        class="btn btn-danger">
+
+                    Eliminar
+
+                </button>
+
+                <a asp-action="Index"
+                       class="btn btn-secondary">
+
+                    Volver
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

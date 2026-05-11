@@ -1,0 +1,90 @@
+﻿@model List<persona_api.Models.Entities.Estudio>
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <a href="/"
+               class="btn btn-secondary">
+               Volver
+        </a>
+
+        <h1>
+            Estudios
+        </h1>
+
+        <a asp-action="Create"
+               class="btn btn-primary">
+
+            Crear Nuevo
+
+        </a>
+
+    </div>
+
+    <div class="card shadow p-3">
+
+        <table class="table table-striped table-hover align-middle">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Profesión</th>
+                    <th>Persona</th>
+                    <th>Fecha</th>
+                    <th>Universidad</th>
+                    <th>Acciones</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.IdProf</td>
+
+                        <td>@item.CcPer</td>
+
+                        <td>@item.Fecha</td>
+
+                        <td>@item.Univer</td>
+
+                        <td>
+
+                            <div class="d-flex gap-2">
+
+                                <a asp-action="Edit"
+                                       asp-route-idProf="@item.IdProf"
+                                       asp-route-ccPer="@item.CcPer"
+                                       class="btn btn-warning btn-sm">
+
+                                    Editar
+
+                                </a>
+
+                                <a asp-action="Delete"
+                                       asp-route-idProf="@item.IdProf"
+                                       asp-route-ccPer="@item.CcPer"
+                                       class="btn btn-danger btn-sm">
+
+                                    Eliminar
+
+                                </a>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

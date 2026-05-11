@@ -1,0 +1,28 @@
+# IDE folders
+.vscode/
+.vs/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+bin/
+obj/
+publish/
+
+# Docker files
+.dockerignore
+docker-compose*
+Dockerfile
+
+# Source control
+.git/
+.gitignore
+
+# Secrets and local settings
+usersecrets.json
+*.user
+appsettings.Development.json
+appsettings.json
