@@ -1,0 +1,34 @@
+@model persona_api.Models.Entities.Persona
+
+<h1>Editar Persona</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Cc" />
+
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nombre" />
+    </div>
+
+    <div>
+        <label>Apellido</label>
+        <input asp-for="Apellido" />
+    </div>
+
+    <div>
+        <label>Género</label>
+        <select asp-for="Genero">
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Edad</label>
+        <input asp-for="Edad" />
+    </div>
+
+    <button type="submit">Actualizar</button>
+
+</form>

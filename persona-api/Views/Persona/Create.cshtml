@@ -1,0 +1,38 @@
+@model persona_api.Models.Entities.Persona
+
+<h1>Crear Persona</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Cédula</label>
+        <input asp-for="Cc" />
+    </div>
+
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nombre" />
+    </div>
+
+    <div>
+        <label>Apellido</label>
+        <input asp-for="Apellido" />
+    </div>
+
+    <div>
+        <label>Género</label>
+        <select asp-for="Genero">
+            <option value="">-- Seleccione --</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Edad</label>
+        <input asp-for="Edad" />
+    </div>
+
+    <button type="submit">Guardar</button>
+
+</form>

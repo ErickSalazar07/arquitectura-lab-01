@@ -1,0 +1,35 @@
+@model List<persona_api.Models.Entities.Persona>
+
+<h1>Personas</h1>
+
+<a asp-action="Create">Crear Nuevo</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Género</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Cc</td>
+                <td>@item.Nombre</td>
+                <td>@item.Apellido</td>
+                <td>@item.Genero</td>
+                <td>@item.Edad</td>
+                <td>
+                    <a asp-action="Edit" asp-route-cc="@item.Cc">Editar</a>
+                    |
+                    <a asp-action="Delete" asp-route-cc="@item.Cc">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
